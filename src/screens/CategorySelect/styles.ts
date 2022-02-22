@@ -28,12 +28,16 @@ export const Title = styled.Text`
     font-size: ${RFValue(18)}px;
 `;
 
-export const Category = styled.View`
+export const Category = styled.TouchableOpacity<CategoryProps>`
     width: 100%;
     padding: ${RFValue(15)}px;
 
     flex-direction: row;
     align-items: center;
+
+    background-color: ${({ isActive }) =>
+        isActive ? theme.colors.secondary_light : theme.colors.background
+    };
 `;
 
 export const Icon = styled(Feather)`
